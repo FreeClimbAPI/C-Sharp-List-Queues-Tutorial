@@ -13,9 +13,9 @@ namespace ListQueues
     {
       return System.Environment.GetEnvironmentVariable("ACCOUNT_ID");
     }
-    public static string getFreeClimbAccountToken()
+    public static string getFreeClimbApiKeys()
     {
-      return System.Environment.GetEnvironmentVariable("AUTH_TOKEN");
+      return System.Environment.GetEnvironmentVariable("API_KEY");
     }
     static void Main(string[] args)
     {
@@ -29,7 +29,7 @@ namespace ListQueues
 
       // Create FreeClimbClient object
       FreeClimbClient client = new FreeClimbClient(getFreeClimbAccountId(),
-                                           getFreeClimbAccountToken());
+                                           getFreeClimbApiKeys());
 
       // Invoke get method to retrieve initial list of queue information
       QueueList queueList = client.getQueuesRequester.get(filters);
